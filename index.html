@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chrismatcham.dev</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #4b0082; /* Dark purple */
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .header-links {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 15px;
+        }
+        .header-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        .header-links a:hover {
+            opacity: 0.8;
+        }
+        .header-title {
+            margin: 0;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .header-home {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .header-home a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            background: #007BFF;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .header-home a:hover {
+            background: #0056b3;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #4b0082; /* Matches the header color */
+        }
+        li a {
+            text-decoration: none;
+            color: #333;
+        }
+        li a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Start of Header -->
+    <header>
+        <div class="header-links">
+            <a href="https://www.linkedin.com/in/christophermatcham/" target="_blank">🔗</a>
+            <a href="https://github.com/Matcham89/" target="_blank">🐙</a>
+            <a href="https://www.youtube.com/@ChrisMatcham?sub_confirmation=1" target="_blank">📺</a>
+        </div>
+        <h1 class="header-title">Blog</h1>
+        <div class="header-home">
+            <a href="index.html">Home</a>
+        </div>
+    </header>
+    <!-- End of Header -->
+
+    <!-- Start of Main Content -->
+    <main>
+        <h2>Latest Posts</h2>
+        <ul>
+            <li><a href="post1.html">How to Get Started with Google Cloud</a></li>
+            <li><a href="post2.html">Building a CI/CD Pipeline with CircleCI</a></li>
+            <li><a href="hok-pt2-cvt.html">Hands On Kubernetes: Part 2 Deploying Vault</a></li>
+        </ul>
+    </main>
+    <!-- End of Main Content -->
+</body>
+</html>
