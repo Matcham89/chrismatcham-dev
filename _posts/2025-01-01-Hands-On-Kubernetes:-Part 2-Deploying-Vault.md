@@ -12,7 +12,7 @@ header:
 In Part 1, we deployed a simple application on Kubernetes. Now, let’s introduce Vault to manage secrets dynamically. Our goal is to populate an environment variable in the app with a secret stored in Vault. We will manually unseal Vault and use the Vault Agent Injector to handle secret injection.
 
 #### Assumptions
-- Part 1 is completed [link](https://matcham89.github.io/Hands-On-Kubernetes-Part-1-Deploying-Kind/).
+- Part 1 is completed [link](https://matcham89.github.io/chrismatcham-dev/Hands-On-Kubernetes-Part-1-Deploying-Kind/).
 - Helm is installed.
 - `jq` is installed.
 
