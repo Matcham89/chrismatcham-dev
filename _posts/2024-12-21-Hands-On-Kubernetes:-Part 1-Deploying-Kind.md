@@ -13,7 +13,7 @@ When diving into Kubernetes, having a reliable local development environment is 
 
 #### Assumptions
 
-- **Quick Read:** [link](https://matcham89.github.io/Hands-On-Kubernetes-Part-2-Deploying-Vault/)
+- **Quick Read:** [link](https://chrismatcham.dev/Local-Kubernetes-Development-A-Journey-to-KIND/)
 - **Laptop / Machine to run KIND:** (Linux/Mac/Windows)
 - **Docker Engine installed and logged in:** [guide](https://docs.docker.com/engine/install/)
 - **kubectl installed:** [guide](https://kubernetes.io/docs/tasks/tools/)
