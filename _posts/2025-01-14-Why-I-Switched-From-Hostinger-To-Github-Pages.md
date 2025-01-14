@@ -4,6 +4,8 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/header.jpg
+  teaser: /assets/images/github-pages.png
+  og_image: /assets/images/github-pages.png
 ---
 
 <br />

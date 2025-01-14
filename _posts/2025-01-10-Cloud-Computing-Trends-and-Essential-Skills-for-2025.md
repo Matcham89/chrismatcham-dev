@@ -4,6 +4,8 @@ header:
   overlay_color: "#000"
   overlay_filter: "0.5"
   overlay_image: /assets/images/header.jpg
+  teaser: /assets/images/cloud.jpg
+  og_image: /assets/images/cloud.jpg
 ---
 
 
