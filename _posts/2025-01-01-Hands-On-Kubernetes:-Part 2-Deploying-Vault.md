@@ -176,6 +176,7 @@ kubectl apply -f service-account.yaml
 
 Update the application deployment:
 ```liquid
+{% raw %}
 # app-b/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -213,6 +214,7 @@ spec:
         env:
         - name: APP_MESSAGE
           value: "Application B"
+{% endraw %}
 ```
 Deploy the application:
 ```bash
