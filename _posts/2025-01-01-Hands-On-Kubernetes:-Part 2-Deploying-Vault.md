@@ -175,7 +175,7 @@ kubectl apply -f service-account.yaml
 ```
 
 Update the application deployment:
-```yaml
+```liquid
 # app-b/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
