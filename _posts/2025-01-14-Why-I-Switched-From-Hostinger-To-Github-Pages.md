@@ -8,8 +8,6 @@ header:
 
 <br />
 
-# Why I Switched My Blog from Hostinger to GitHub Pages
-
 Blogging should be simple. For me, it’s about sharing my learning journey and reiterating what I’ve learned—whether it’s Kubernetes, Google Cloud, or any of the other technologies I work with. Yet, my blogging experience with Hostinger became anything but simple, which led me to migrate my blog to GitHub Pages.
 
 Here’s my story, frustrations, and why GitHub Pages turned out to be the perfect platform for my needs.
