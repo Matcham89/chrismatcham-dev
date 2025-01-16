@@ -276,6 +276,40 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
 
+Navigate to the Ingree folder and update the configuration
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: default-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: app.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app
+            port:
+              number: 80
+  - host: app-vault.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-vault
+            port:
+              number: 80
+```
+
 
 #### Verify Vault Integration
 Check the pod status:
