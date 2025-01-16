@@ -354,9 +354,11 @@ You can also verify the injected secret directly:
 kubectl exec -i -t app-XXXXXX -c app-vault -- cat /vault/secrets/config
 ```
 Expected output:
-```
-export SECRET="this is a secret stored in vault and exported with vault injector"
+```bash
+export SECRET="this is a secret stored in vault and exported with vault injector"  # Extract the "secret" field from the Vault secret
 ```
 
 ### Conclusion
-We have successfully integrated Vault into our Kubernetes application to dynamically inject secrets. This setup forms the foundation for managing secrets securely in production environments.
+We have successfully integrated Vault into our Kubernetes application to dynamically inject secrets. 
+
+This setup forms the foundation for managing secrets securely in production environments.
