@@ -154,7 +154,7 @@ mkdir vault-k8s-sa
 cd vault-k8s-sa
 ```
 ```bash
-vim vault-local-sa.yaml
+vim service-account.yaml
 ```
 ```yaml
 # service-account.yaml
@@ -189,6 +189,19 @@ Apply the configuration:
 kubectl apply -f service-account.yaml
 ```
 
+Now we will copy our exsisting application to a new folder and update the annotations to support Vault
+
+```bash
+ cp -r app app-vault
+ cd app-vault
+```
+
+```bash
+rm deployment.yaml
+vim deployment.yaml
+```
+
+
 Update the application deployment:
 ```liquid
 {% raw %}
@@ -196,26 +209,29 @@ Update the application deployment:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app
+  name: app-vault
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app
+      app: app-vault
   template:
     metadata:
       labels:
-        app: app
+        app: app-vault
       annotations:
-        vault.hashicorp.com/agent-inject: "true"
-        vault.hashicorp.com/role: "vault-local"
-        vault.hashicorp.com/agent-inject-secret-config: "kv-v2/vault-local/local-k8s"
+        # Vault Agent Injection annotations to enable Vault integration in the pod
+        vault.hashicorp.com/agent-inject: "true"  # Tells Vault to inject a Vault agent into the pod
+        vault.hashicorp.com/role: "vault-local"  # Role for Vault to access secrets, providing permission for the pod
+        # Specifies which Vault secret path to inject
+        vault.hashicorp.com/agent-inject-secret-config: "kv-v2/vault-local/local-k8s"  # Secret path to fetch from Vault
+        # Template to format the secrets and inject them into the container as environment variables
         vault.hashicorp.com/agent-inject-template-config: |
           {{- with secret "kv-v2/data/vault-local/local-k8s" -}}
-          export SECRET="{{ .Data.data.secret }}"
+          export SECRET="{{ .Data.data.secret }}"  # Extract the "secret" field from the Vault secret
           {{- end }}
     spec:
-      serviceAccountName: vault-local
+      serviceAccountName: vault-local  # Service account with Vault permissions assigned to the pod
       containers:
       - name: app
         image: matcham89/app:latest
@@ -225,10 +241,11 @@ spec:
         - "sh"
         - "-c"
         args:
-        - ". /vault/secrets/config && exec python app.py"
+        - ". /vault/secrets/config && exec python app.py"  # Load the Vault secrets into environment variables before running the app
         env:
         - name: APP_MESSAGE
-          value: "Test Application"
+          value: "Test Application"  # The environment variable for the application message
+
 {% endraw %}
 ```
 Deploy the application:
