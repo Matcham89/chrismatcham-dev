@@ -248,10 +248,34 @@ spec:
 
 {% endraw %}
 ```
-Deploy the application:
+
+Update the service manifest
+
 ```bash
-kubectl apply -f app/deployment.yaml
+vim service.yaml
 ```
+```yaml
+apiVersion: v1
+
+kind: Service
+metadata:
+  name: app-vault
+spec:
+  selector:
+    app: app-vault
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+```
+
+
+Deploy the new application & service:
+```bash
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+
 
 #### Verify Vault Integration
 Check the pod status:
@@ -260,9 +284,22 @@ kubectl get pods
 ```
 If the pod status shows an init container, it indicates that the Vault Agent Injector is working.
 
+Update the etc host files
+(remember to checkout the external loadbalncer IP and ensure the kind api is running)
+
+```bash
+vim /etc/hosts
+```
+
+```bash
+# local cluster
+172.18.0.5 app.local
+172.18.0.5 app-vault.local
+```
+
 Test the application:
 ```bash
-curl app.local
+curl app-vault.local
 ```
 Expected output:
 ```
