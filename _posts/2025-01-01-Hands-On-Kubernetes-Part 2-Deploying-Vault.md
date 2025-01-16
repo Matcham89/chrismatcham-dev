@@ -276,7 +276,7 @@ kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 ```
 
-Navigate to the Ingree folder and update the configuration
+Navigate to the Ingress folder and update the configuration
 
 ```yaml
 apiVersion: networking.k8s.io/v1
