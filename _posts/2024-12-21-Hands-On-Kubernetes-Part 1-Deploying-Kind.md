@@ -230,7 +230,7 @@ spec:
     targetPort: 5000
 ```
 
-From within tje application directory, deploy the manifests:
+From within the application directory, deploy the manifests:
 
 ```sh
 kubectl apply -f deployment.yaml
