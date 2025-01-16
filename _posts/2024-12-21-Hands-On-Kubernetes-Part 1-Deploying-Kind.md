@@ -139,12 +139,12 @@ def home():
     </html>
     """
     return render_template_string(html_template,
-                                  title="Environment-Application",
+                                  title="Application Title",
                                   app_message=app_message,
-                                  secret=secret)  # Fixed syntax error here by removing the trailing comma
+                                  secret=secret)  
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)  # Fixed indentation here
+    app.run(host="0.0.0.0", port=5000)
 ```
 
 We containerize this application using a straightforward Dockerfile:
