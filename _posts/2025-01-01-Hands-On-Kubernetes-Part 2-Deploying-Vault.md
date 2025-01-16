@@ -314,14 +314,9 @@ spec:
 kubectl apply -f default.yaml
 ```
 
-#### Verify Vault Integration
-Check the pod status:
-```bash
-kubectl get pods
-```
-If the pod status shows an init container, it indicates that the Vault Agent Injector is working.
 
-Update the etc host files
+Update the etc host files to reflect the new ingress map
+
 (remember to checkout the external loadbalncer IP and ensure the kind api is running)
 
 ```bash
@@ -334,7 +329,15 @@ vim /etc/hosts
 172.18.0.5 app-vault.local
 ```
 
-Test the application:
+Check on the newly created pod:
+```bash
+kubectl get pods
+```
+You should see a count of `2/2` for the ready status.
+
+One is the init container to inject the secrets, the second is our applicaiton.
+
+With the application ready, we can test to see if the secret injection is working:
 ```bash
 curl app-vault.local
 ```
