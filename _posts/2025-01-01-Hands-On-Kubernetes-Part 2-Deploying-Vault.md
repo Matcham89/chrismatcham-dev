@@ -145,6 +145,17 @@ vault write auth/kubernetes/role/vault-local   bound_service_account_names=vault
 
 ### Step 4: Configure Kubernetes Service Account For Vault
 Create a service account, role, and role binding:
+
+```bash
+mkdir vault-k8s-sa
+```
+
+```bash
+cd vault-k8s-sa
+```
+```bash
+vim vault-local-sa.yaml
+```
 ```yaml
 # service-account.yaml
 apiVersion: v1
