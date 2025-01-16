@@ -190,9 +190,6 @@ Navigate to each file and populate it accordingly with the below manifests
 Deployment manifest:
 
 ```yaml
-Deployment manifest:
-
-```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
