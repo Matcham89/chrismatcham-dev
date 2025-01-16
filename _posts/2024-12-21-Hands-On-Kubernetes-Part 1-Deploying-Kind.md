@@ -127,23 +127,24 @@ app = Flask(__name__)
 def home():
     app_message = os.getenv("APP_MESSAGE", "Default Message")
     secret = os.getenv("SECRET", "Not Connected")
-    other_secret = os.getenv("OTHER_SECRET", "Not Set")
 
     # HTML Template to render in the browser
     html_template = """
-    {{ title }}
-    
-        {{ app_message }}
-        Vault Secret: {{ secret }}
-        Other Secret: {{ other_secret }}
+    <html>
+    <head><title>{{ title }}</title></head>
+    <body>
+        <h1>{{ app_message }}</h1>
+        <p><strong>Vault Secret:</strong> {{ secret }}</p>
+    </body>
+    </html>
     """
-    return render_template_string(html_template, 
-                                    title="Environment-Application", 
-                                    app_message=app_message, 
-                                    secret=secret, 
-                                    other_secret=other_secret)
+    return render_template_string(html_template,
+                                  title="Environment-Application",
+                                  app_message=app_message,
+                                  secret=secret)  # Fixed syntax error here by removing the trailing comma
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)  # Fixed indentation here
 ```
 
 We containerize this application using a straightforward Dockerfile:
@@ -180,7 +181,7 @@ With our application containerized, we can deploy it to our cluster.
 
 Create the following files:
 ```sh
-mkdir app-a && touch app-a/deployment.yaml && touch app-a/service.yaml
+mkdir app && touch app/deployment.yaml && touch app/service.yaml
 
 mkdir ingress && touch ingress/default.yaml
 ```
@@ -193,25 +194,25 @@ Deployment manifest:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-a
+  name: app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-a
+      app: app
   template:
     metadata:
       labels:
-        app: app-a
+        app: app
     spec:
       containers:
-      - name: app-a
+      - name: app
         image: matcham89/app:latest
         ports:
         - containerPort: 5000
         env:
         - name: APP_MESSAGE
-          value: "Application A"
+          value: "Test Application"
 
 ```
 Service manifest:
@@ -220,10 +221,10 @@ Service manifest:
 apiVersion: v1
 kind: Service
 metadata:
-  name: app-a
+  name: app
 spec:
   selector:
-    app: app-a
+    app: app
   ports:
   - protocol: TCP
     port: 80
@@ -263,14 +264,14 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: app-a.local
+  - host: app.local
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: app-a
+            name: app
             port:
               number: 80
 ```
@@ -324,7 +325,7 @@ The last step is to update our `/etc/hosts` file to route traffic to our applica
 sudo vim /etc/hosts
 
 # local k8s dev 
-172.18.0.6 app-a.local
+172.18.0.6 app.local
 ```
 
 *(Be sure to update the IP address with the output from your controller)*
@@ -343,7 +344,7 @@ At this point, we have:
 You can now access the applications by curling it:
 
 ```sh
-curl app-a.local 
+curl app.local 
 ```
 
 ```sh
