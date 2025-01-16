@@ -97,7 +97,11 @@ kubectl exec -i -t vault-0 -n vault -- vault status
 Log into Vault with the root token:
 ```bash
 jq -r ".root_token" vault-keys.json
+```
+```bash
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- /bin/sh
+```
+```bash
 vault login
 ```
 
