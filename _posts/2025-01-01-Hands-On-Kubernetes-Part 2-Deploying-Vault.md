@@ -21,7 +21,7 @@ In Part 1, we deployed a simple application on Kubernetes. Now, let’s introduc
 #### Verifying the Cluster
 Ensure the cluster is operational by running:
 ```bash
-curl app-a.local
+curl app.local
 ```
 If the app responds correctly, proceed.
 
@@ -177,20 +177,20 @@ kubectl apply -f service-account.yaml
 Update the application deployment:
 ```liquid
 {% raw %}
-# app-b/deployment.yaml
+# app/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-b
+  name: app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-b
+      app: app
   template:
     metadata:
       labels:
-        app: app-b
+        app: app
       annotations:
         vault.hashicorp.com/agent-inject: "true"
         vault.hashicorp.com/role: "vault-local"
@@ -202,7 +202,7 @@ spec:
     spec:
       serviceAccountName: vault-local
       containers:
-      - name: app-b
+      - name: app
         image: matcham89/app:latest
         ports:
         - containerPort: 5000
@@ -213,12 +213,12 @@ spec:
         - ". /vault/secrets/config && exec python app.py"
         env:
         - name: APP_MESSAGE
-          value: "Application B"
+          value: "Test Application"
 {% endraw %}
 ```
 Deploy the application:
 ```bash
-kubectl apply -f app-b/deployment.yaml
+kubectl apply -f app/deployment.yaml
 ```
 
 #### Verify Vault Integration
@@ -230,19 +230,22 @@ If the pod status shows an init container, it indicates that the Vault Agent Inj
 
 Test the application:
 ```bash
-curl app-b.local
+curl app.local
 ```
 Expected output:
 ```
-Environment-Application
-  Application B
-  Vault Secret: this is a secret stored in vault and exported with vault injector
-  Other Secret: Not Set
+    <html>
+    <head><title>Application Title</title></head>
+    <body>
+        <h1>Test Application</h1>
+        <p><strong>Vault Secret:</strong> this is a secret stored in vault and exported with vault injector </p>
+    </body>
+    </html>
 ```
 
 You can also verify the injected secret directly:
 ```bash
-kubectl exec -i -t app-b-XXXXXX -c app-b -- cat /vault/secrets/config
+kubectl exec -i -t app-XXXXXX -c app -- cat /vault/secrets/config
 ```
 Expected output:
 ```
