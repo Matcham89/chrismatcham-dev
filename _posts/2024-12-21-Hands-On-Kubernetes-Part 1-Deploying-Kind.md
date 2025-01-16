@@ -348,11 +348,13 @@ curl app.local
 ```
 
 ```sh
-Environment Variables
-    
-        Application A
-        Vault Secret: Not Connected
-        Other Secret: Not Set
+    <html>
+    <head><title>Application Title</title></head>
+    <body>
+        <h1>Test Application</h1>
+        <p><strong>Vault Secret:</strong> Not Connected</p>
+    </body>
+    </html>
 ```
 
 #### Key Takeaways
