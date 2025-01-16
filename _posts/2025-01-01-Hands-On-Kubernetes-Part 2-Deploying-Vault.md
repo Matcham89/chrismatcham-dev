@@ -233,7 +233,7 @@ spec:
     spec:
       serviceAccountName: vault-local  # Service account with Vault permissions assigned to the pod
       containers:
-      - name: app
+      - name: app-vault
         image: matcham89/app:latest
         ports:
         - containerPort: 5000
@@ -310,6 +310,9 @@ spec:
               number: 80
 ```
 
+```bash
+kubectl apply -f default.yaml
+```
 
 #### Verify Vault Integration
 Check the pod status:
@@ -341,14 +344,14 @@ Expected output:
     <head><title>Application Title</title></head>
     <body>
         <h1>Test Application</h1>
-        <p><strong>Vault Secret:</strong> this is a secret stored in vault and exported with vault injector </p>
+        <p><strong>Vault Secret:</strong> this is a secret stored in vault and exported with vault injector</p>
     </body>
     </html>
 ```
 
 You can also verify the injected secret directly:
 ```bash
-kubectl exec -i -t app-XXXXXX -c app -- cat /vault/secrets/config
+kubectl exec -i -t app-XXXXXX -c app-vault -- cat /vault/secrets/config
 ```
 Expected output:
 ```
