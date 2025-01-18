@@ -143,6 +143,12 @@ Create a role to bind the policy to a service account:
 vault write auth/kubernetes/role/vault-local   bound_service_account_names=vault-local   bound_service_account_namespaces=default   policies=vault-local   ttl=1h
 ```
 
+
+Exit vault pod 
+
+```bash
+exit
+```
 ### Step 4: Configure Kubernetes Service Account For Vault
 Create a service account, role, and role binding:
 
