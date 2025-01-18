@@ -26,7 +26,7 @@ When diving into Kubernetes, having a reliable local development environment is 
 
 #### KIND Installation
 
-The installation steps are straightforward and documented well [here](#).
+The installation steps are straightforward and documented well [here](https://kind.sigs.k8s.io/docs/user/quick-start/).
 
 
 
