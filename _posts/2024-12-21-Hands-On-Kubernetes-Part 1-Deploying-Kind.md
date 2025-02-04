@@ -141,7 +141,7 @@ def home():
     return render_template_string(html_template,
                                   title="Application Title",
                                   app_message=app_message,
-                                  secret=secret)  
+                                  secret=secret)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

@@ -130,9 +130,11 @@ vault kv get kv-v2/vault-local/local-k8s
 #### Create a Policy
 Create a policy file:
 ```bash
-echo 'path "kv-v2/data/vault-local/local-k8s" {
+cat <<EOF > /tmp/vault-local-policy.hcl
+path "kv-v2/data/vault-local/local-k8s" {
   capabilities = ["read"]
-}' > /tmp/vault-local-policy.hcl
+}
+EOF
 ```
 Apply the policy:
 ```bash
