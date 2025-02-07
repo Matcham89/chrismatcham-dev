@@ -116,7 +116,8 @@ touch Dockerfile
 
 Update the `app.py` with the below:
 
-```py
+```liquid
+{% raw %}
 # app.py
 from flask import Flask, render_template_string
 import os
@@ -145,6 +146,7 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+{% endraw %}
 ```
 
 We containerize this application using a straightforward Dockerfile:
