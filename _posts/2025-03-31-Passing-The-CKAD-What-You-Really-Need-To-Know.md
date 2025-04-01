@@ -33,12 +33,8 @@ Before we dive into study techniques, let’s go over what to expect during the 
 
 Knowing these details in advance will help you avoid unnecessary stress on exam day.
 
-
-
-
 ### Quick Note: Grading
 The CKAD exam is graded by **automation scripts**, not a human. That means:
-
 
 - No partial credit for “almost correct” in the wrong place.
 - Typos or incorrect YAML indentation can cost you points.
@@ -46,8 +42,6 @@ The CKAD exam is graded by **automation scripts**, not a human. That means:
 
 
 This is why practicing commands and YAML formatting is so important.
-
-
 
 
 ### Tips for Success
@@ -160,12 +154,8 @@ kubectl create deployment nginx --image=nginx -o yaml --dry-run=client > deploym
 kubectl apply -f deployment.yaml
 ```
 
-
-
-
 ### Key Focus Areas
 For the CKAD exam I focused on these topics:
-
 
 #### 1. PersistentVolume & PersistentVolumeClaim
 - Creating **PersistentVolumes (PV)** and **PersistentVolumeClaims (PVC)**.
@@ -240,8 +230,6 @@ Here's a list of the resources that I used and believe helped me pass the CKAD e
 - [A Cloud Guru](https://www.pluralsight.com/cloud-guru) - Great labs and a brilliant course, IMO.  
 - [Killer Coda](https://killercoda.com/) - From the creator of Killer Shell, Killer Coda is another great tool.  
 - **Practice! Practice! Practice!**  
-
-
 
 
 ### Final Thoughts
