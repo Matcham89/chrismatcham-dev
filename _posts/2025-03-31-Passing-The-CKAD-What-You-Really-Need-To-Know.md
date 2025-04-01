@@ -10,9 +10,6 @@ header:
 
 <br />
 
-# Passing the CKAD: What You Really Need to Know
-
-
 ## Intro
 Kubernetes is a powerful tool, but it can feel overwhelming at first. If you're preparing for the CKAD (Certified Kubernetes Application Developer) exam, you might be wondering where to start or how to study effectively. I’ve been there! In this post, I’ll share my experience, what worked for me, and how you can best prepare—even if you're new to Kubernetes.
 
