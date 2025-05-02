@@ -114,7 +114,51 @@ Step 2: Seal the secret:
 kubeseal --controller-name sealed-secrets -f secret-bitwarden-token.yaml > sealed-secret-bitwarden-token.yaml 
 ```
 
+
+Here is what it looked like before:
+
+
+```yaml
+apiVersion: v1
+data:
+  token: dGhpc19pc19hX3Rva2Vu # base64 encoded only, not ideal
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: bitwarden-access-token
+  namespace: external-secrets
+
+```
+
+This is how it looks after its been sealed:
+
+```yaml
+{
+  "kind": "SealedSecret",
+  "apiVersion": "bitnami.com/v1alpha1",
+  "metadata": {
+    "name": "bitwarden-access-token",
+    "namespace": "external-secrets",
+    "creationTimestamp": null
+  },
+  "spec": {
+    "template": {
+      "metadata": {
+        "name": "bitwarden-access-token",
+        "namespace": "external-secrets",
+        "creationTimestamp": null
+      }
+    },
+    "encryptedData": {
+      "token": "AgC2hKiONULB6K9/HGB1xXwg3FAoBMmD8lzwORWYMaSTlElswUrNurHHI/USi9xWLynQUk59cn+ATcCO4J/TLH8ELDuKjXTQF28IDM9gEZIbHmxWxZA5ZHsw6yGZVkm12pQbdWk6rhbJOecRgm10YRaqp8pJLXnyIjyzCH8//7Ov3ECkTd1zKIN8Fy6IjLKTW9x/HQDhMLgQQLqUKNvmVQfBnpm2CK7mSo8REPkc+cgVx/VR8rHbaio+LRydCCY9gth2p5HRl/r3zeuRW607SaOxPtw+MWdW8Vz09V18vq6Jg+catoB9uQM4mFumrnaFV8qombdqncDh1ysImfumrlI1mSd00IDK935Wd4/ArqpQhNcct5pfrGl258zwet6V7Oke42HWjvf0Oj020uiWzCxZxiR9lDgVb2HwFoMS6WcINHTJ5L6tYQGbAZHrRIFrrW+UmSESkKXo5gw6iR8/AHCr99Pplnp5f6dx+SLr/xZIxf7SyIH6D62vwe62e6Z4KHpqcA6GtSH7Ttib2szkpgZ5sVsLheh89crjAXNqq4PS+dGgChVFfCgUtC92kFXAq9kZt4t1OnlRWsv7jPSshXfM48evMbsOoWrPx/qH/sP2gAZsmCarY2S01iyrMkKG4gmDWOHlqGDvkgnL19EHn+Ei1ob5UFsvM4SNbfexG7dA/SLSW+BmUlScw5CSiH1aL6Afz2GrN9ygwPbWTmejTfI="
+    }
+  }
+}
+```
+
+
 This sealed version is safe to commit to GitHub.
+
 
 ### Application Secret Injection
 
