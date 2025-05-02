@@ -170,6 +170,11 @@ env:
         key: test
 ```
 
+I check out my application
+
+![architechture](../assets/images/test-app-secret.png)
+
+
 ### Round Up
 
 * Decided on Rancher Desktop with K3s for simplicity and portability
