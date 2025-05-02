@@ -104,7 +104,7 @@ Step 1: Create the secret:
 
 ```sh
 kubectl create secret generic bitwarden-access-token -n external-secrets \
-  --from-literal=token=156f0558548518180f216.d5TcgcMXP7KSteSLi6Cgciwf7rMTaA:F25gDaR7xuf7sZIsQJ5mrQ== \
+  --from-literal=token=this_is_a_token \
   --dry-run=client -o yaml > secret-bitwarden-token.yaml
 ```
 
