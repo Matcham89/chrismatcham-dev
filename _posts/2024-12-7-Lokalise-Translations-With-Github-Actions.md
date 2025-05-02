@@ -163,7 +163,8 @@ The process of base64 encoding in a CI/CD pipeline revealed the importance of ha
 
 For reference, this is the full GitHub Action I used:
 
-```sh
+```liquid
+{% raw %}
 
 name: Update Translations
 
@@ -313,4 +314,5 @@ jobs:
           git add ./translations
           git commit -m "Update translations from Lokalise"
           git push
+{% endraw %}
 ```
