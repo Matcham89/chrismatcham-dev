@@ -14,7 +14,7 @@ Setting Up a Local Kubernetes Lab
 I decided to build a new local Kubernetes lab.
 In the past, I’ve experimented with different providers—Minikube, KIND, and K3s—running both locally and on Raspberry Pi devices. I like trying new tools and tech, so I was on the lookout for a clean and simple way to get a lab up and running. I had a few core requirements:
 
-* Portable: I wanted the cluster to work anywhere, with or without the internet.
+* Portable: I wanted the cluster to work anywhere.
 
 
 * Simple: I’ve built "Kubernetes the Hard Way" before—this time I wanted something easier.
@@ -177,4 +177,4 @@ env:
 
 * Connected it all with External Secrets to inject secrets into my apps
 
-* This setup gives me a lightweight, local, cloud-free Kubernetes lab with best practices baked in.
+* This setup gives me a lightweight, local, Kubernetes lab with best practices baked in.
