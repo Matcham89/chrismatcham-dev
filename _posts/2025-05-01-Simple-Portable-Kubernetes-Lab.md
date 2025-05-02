@@ -83,7 +83,9 @@ Requirements:
 ![architechture](../assets/images/rancher-design.drawio.png)
 
 
-I chose Bitwarden Secrets Manager because it’s free and integrates with External Secrets. That covers most of my security concerns, but the initial Bitwarden config still needs protection.
+I chose Bitwarden Secrets Manager because it’s free and integrates with External Secrets. 
+
+That covers most of my security concerns, but the initial Bitwarden config still needs protection.
 I tried SOPS with age, but it didn’t go smoothly. 
 
 Then I found Sealed Secrets from Bitnami.
@@ -92,13 +94,15 @@ _“Problem: I can manage all my K8s config in git—except Secrets.”
  “Solution: Encrypt your Secret into a SealedSecret, which is safe to store—even in a public repo.”_
 
 This was exactly what I needed.
-The Sealed Secrets controller handles encryption/decryption. Only the controller can decrypt the secrets—nobody else, not even me. That’s fine, since I don’t need to decrypt them locally.
+The Sealed Secrets controller handles encryption/decryption. Only the controller can decrypt the secrets—nobody else, not even me. 
+
+That’s fine, since I don’t need to decrypt them locally.
 
 Here’s how to use it:
 
 Step 1: Create the secret:
 
-```
+```sh
 kubectl create secret generic bitwarden-access-token -n external-secrets \
   --from-literal=token=156f0558548518180f216.d5TcgcMXP7KSteSLi6Cgciwf7rMTaA:F25gDaR7xuf7sZIsQJ5mrQ== \
   --dry-run=client -o yaml > secret-bitwarden-token.yaml
@@ -106,7 +110,7 @@ kubectl create secret generic bitwarden-access-token -n external-secrets \
 
 Step 2: Seal the secret:
 
-```
+```sh
 kubeseal --controller-name sealed-secrets -f secret-bitwarden-token.yaml > sealed-secret-bitwarden-token.yaml 
 ```
 
@@ -116,7 +120,8 @@ This sealed version is safe to commit to GitHub.
 
 With Bitwarden configured and sealed, I can now have External Secrets inject variables into my app:
 
-```apiVersion: external-secrets.io/v1beta1
+```yaml
+apiVersion: external-secrets.io/v1beta1
 kind: ClusterSecretStore
 metadata:
   name: bitwarden-secretsmanager
@@ -137,7 +142,7 @@ spec:
 
 ```
 
-```
+```yaml
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
@@ -154,7 +159,7 @@ spec:
 ```
 
 
-```
+```yaml
 env:
   - name: APP_MESSAGE
     value: "Test Application"
