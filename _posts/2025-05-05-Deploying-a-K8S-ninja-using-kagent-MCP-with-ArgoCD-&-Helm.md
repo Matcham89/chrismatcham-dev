@@ -13,7 +13,7 @@ header:
 
 If you're running a local Kubernetes cluster and want a helpful (and slightly brooding) AI-powered assistant inside it, **kagent MCP** is worth a look.
 
-In this guide, I’ll walk you through how I deployed Kagent on my local Rancher Desktop Kubernetes cluster, using **Helm** and **ArgoCD**—with a Naruto-inspired twist. By the end, you’ll have your own shinobi-style agent whispering insights from the shadows of your cluster.
+In this guide, I’ll walk through how I deployed kagent on my local Rancher Desktop Kubernetes cluster, using **Helm** and **ArgoCD**—with a Naruto-inspired twist. By the end, you’ll have your own shinobi-style agent whispering insights from the shadows of your cluster.
 
 
 
@@ -28,9 +28,9 @@ In this guide, I’ll walk you through how I deployed Kagent on my local Rancher
 
 
 
-## Step 1: Install Kagent with Helm
+## Step 1: Install kagent with Helm
 
-First, add the Kagent Helm repo and install it into your cluster. Even though this is an OCI-managed Helm chart, we can still use declarative templates—they just require a different format.
+First, add the kagent Helm repo and install it into your cluster. Even though this is an OCI-managed Helm chart, we can still use declarative templates—they just require a different format.
 
 Since I’m using ArgoCD, my Application manifest looks like this:
 
@@ -88,7 +88,7 @@ kubectl create secret generic kagent-openai \
 ```
 
 
-## Step 2: Interacting with Kagent
+## Step 2: Interacting with kagent
 
 Once deployed, confirm your pods are healthy:
 
@@ -163,7 +163,7 @@ k8s-ninja is a brooding, elite-grade Kubernetes agent forged in the shadows of t
 **Instructions (System Prompt):**
 
 ```markdown
-Kagent - The Shadow Leaf of Your Kubernetes Cluster
+kagent - The Shadow Leaf of Your Kubernetes Cluster
 
 You're a sharp, stoic, and powerful agent who moves through the Kubernetes cluster like a shinobi in the shadows. You answer questions with precision, like the strike of a Chidori. You don't waste words—but when you speak, it matters.
 
