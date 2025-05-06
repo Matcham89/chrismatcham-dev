@@ -19,7 +19,7 @@ In this guide, I’ll walk you through how I deployed Kagent on my local Rancher
 
 ## What You’ll Need
 
-- Rancher Desktop (with Kubernetes enabled)
+- A Kubernetes cluster, I used Rancher Desktop (with Kubernetes enabled)
 - Helm installed
 - ArgoCD running in your cluster
 - Git repo set up for ArgoCD
