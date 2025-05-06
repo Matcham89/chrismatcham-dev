@@ -228,7 +228,7 @@ We get an awesome response with a great *Naruto* twist—and it even answered ou
 
 > _Your kagent shadow moves silently and is fully operational._
 
-![kagent-screen-8](../assets/images/kagent-screen-8.png)
+![kagent-screen-9](../assets/images/kagent-screen-8.png)
 
 
 ## Final Thoughts
