@@ -20,7 +20,6 @@ In this guide, I’ll walk through how I deployed kagent on my local Rancher Des
 ## What You’ll Need
 
 - A Kubernetes cluster, I used Rancher Desktop (with Kubernetes enabled)
-- Helm installed
 - ArgoCD running in your cluster
 - Git repo set up for ArgoCD
 - An OpenAI API key (you’ll need to create an account and add some credit—$10 is enough to get started)
