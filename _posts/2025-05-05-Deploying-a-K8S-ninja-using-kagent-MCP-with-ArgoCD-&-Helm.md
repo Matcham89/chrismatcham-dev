@@ -238,3 +238,13 @@ Deploying kagent MCP on a local Kubernetes cluster with Helm and ArgoCD turned o
 With just a few YAMLs, a secret for your API key, and a port-forwarded service, you can spin up your own AI-powered agent right inside your cluster.
 
 Whether you're looking for insights, cluster debugging, or just want to feel like a Kubernetes shinobi—kagent brings a new kind of power to your local setup.
+
+## Reference Links
+
+* [kagent Documentation](https://kagent.dev/)
+
+* [kubectl install](https://kubernetes.io/docs/tasks/tools/)
+
+* [Rancher Desktop](https://rancherdesktop.io/)
+
+* [ArgoCD Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
