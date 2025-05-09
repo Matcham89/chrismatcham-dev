@@ -139,6 +139,8 @@ Create an agent using the wizard
 
 I used the agent instructions I previously created:
 
+![kagent-screen-3](../assets/images/kagent-screen-3.png)
+
 ```markdown
 kagent - The Shadow Leaf of Your Kubernetes Cluster
 
