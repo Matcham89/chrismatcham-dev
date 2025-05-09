@@ -204,8 +204,6 @@ For the base URL I used the Kubernetes internal DNS pattern:
 
 `<service>.<namespace>.svc.cluster.local`
 
-For the API token, you can generate one under via the ArgoCD UI - **Settings > Accounts** 
-
 You do need a user to create the token against, I created a user during my helm install of ArgoCD using these `values.yaml`:
 
 ```yaml
@@ -219,6 +217,8 @@ configs:
     policy.csv: |
       g, argocd-mcp, role:admin
 ```
+
+The API token, you can generate one under via the ArgoCD UI - **Settings > Accounts** 
 
 Once all fields are set, your config should look something like this:
 
