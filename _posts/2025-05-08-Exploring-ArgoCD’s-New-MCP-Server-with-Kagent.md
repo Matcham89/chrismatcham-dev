@@ -141,6 +141,8 @@ I used the agent instructions I previously created:
 
 ![kagent-screen-3](../assets/images/kagent-screen-3.png)
 
+>Instuctions
+
 ```markdown
 kagent - The Shadow Leaf of Your Kubernetes Cluster
 
@@ -179,9 +181,6 @@ Explain the outcome or the result of your actions. If something went wrong, ackn
 
 > “I walk the path of Kubernetes alone… but I will guide you—for now.”
 ```
-
-![kagent-screen-2](../assets/images/kagent-screen-2.png)
-
 
 
 ## Step 3: Add the ArgoCD MCP Server
