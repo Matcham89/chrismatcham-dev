@@ -133,7 +133,7 @@ Then open `http://localhost:8080` in your browser.
 
 ![Welcome-Screen](../assets/images/kagent-welcome-screen.png)
 
-Create an agent using the wizard—I used the Ninja prompt I previously created.
+Create an agent using the wizard—I used the instructions I previously created:
 
 ```markdown
 kagent - The Shadow Leaf of Your Kubernetes Cluster
