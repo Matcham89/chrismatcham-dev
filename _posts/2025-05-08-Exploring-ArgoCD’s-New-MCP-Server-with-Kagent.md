@@ -100,6 +100,12 @@ If you don’t have a secret manager set up, you can create the secret like this
 export OPENAI_API_KEY=<ENTER_API_KEY>
 ```
 
+```bash
+kubectl create secret generic kagent-openai \
+  --namespace kagent \
+  --from-literal=OPENAI_API_KEY=$OPENAI_API_KEY
+```
+
 Push the manifest to ArgoCD and you should see your Kagent pod running soon after:
 
 ```bash
