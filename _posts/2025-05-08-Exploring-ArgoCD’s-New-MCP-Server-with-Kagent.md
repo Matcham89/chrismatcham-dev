@@ -198,6 +198,7 @@ Click **Add Server** and enter the following details:
 ```env
 ARGOCD_BASE_URL=https://argocd-server.argocd.svc.cluster.local
 ARGOCD_API_TOKEN=<API_TOKEN>
+NODE_TLS_REJECT_UNAUTHORIZED=0 (disables the tls verification.)
 ```
 
 For the base URL I used the Kubernetes internal DNS pattern: 
