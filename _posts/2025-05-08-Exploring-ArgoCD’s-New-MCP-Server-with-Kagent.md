@@ -80,7 +80,7 @@ spec:
               apiKeySecretKey: OPENAI_API_KEY
     - repoURL: ghcr.io/kagent-dev/kagent/helm
       chart: kagent-crds
-      targetRevision: 0.3.1
+      targetRevision: 0.3.0
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
