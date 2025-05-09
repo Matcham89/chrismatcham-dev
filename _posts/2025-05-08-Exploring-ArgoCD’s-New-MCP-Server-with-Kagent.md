@@ -68,7 +68,7 @@ spec:
   sources:
     - repoURL: ghcr.io/kagent-dev/kagent/helm
       chart: kagent
-      targetRevision: 0.3.0
+      targetRevision: 0.3.1
       helm:
         values: |
           providers:
@@ -80,7 +80,7 @@ spec:
               apiKeySecretKey: OPENAI_API_KEY
     - repoURL: ghcr.io/kagent-dev/kagent/helm
       chart: kagent-crds
-      targetRevision: 0.3.0
+      targetRevision: 0.3.1
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
