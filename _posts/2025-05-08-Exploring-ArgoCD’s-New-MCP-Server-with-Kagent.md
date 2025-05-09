@@ -218,7 +218,7 @@ configs:
       g, argocd-mcp, role:admin
 ```
 
-The API token, you can generate one under via the ArgoCD UI - **Settings > Accounts** 
+For the API token, you can generate one via the ArgoCD UI - **Settings > Accounts** 
 
 Once all fields are set, your config should look something like this:
 
