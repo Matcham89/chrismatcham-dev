@@ -196,7 +196,7 @@ Click **Add Server** and enter the following details:
 ### Environment Variables:
 
 ```env
-ARGOCD_BASE_URL=argocd-server.argocd.svc.cluster.local
+ARGOCD_BASE_URL=https://argocd-server.argocd.svc.cluster.local
 ARGOCD_API_TOKEN=<API_TOKEN>
 ```
 
