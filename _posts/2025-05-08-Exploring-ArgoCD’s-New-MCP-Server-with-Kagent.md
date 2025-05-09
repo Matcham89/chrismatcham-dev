@@ -200,13 +200,13 @@ ARGOCD_BASE_URL=argocd-server.argocd.svc.cluster.local
 ARGOCD_API_TOKEN=<API_TOKEN>
 ```
 
-The base URL uses the Kubernetes internal DNS pattern: 
+For the base URL I used the Kubernetes internal DNS pattern: 
 
 `<service>.<namespace>.svc.cluster.local`
 
-For the API token, you can generate one under **Settings > Accounts** 
+For the API token, you can generate one under via the ArgoCD UI - **Settings > Accounts** 
 
-I created a user during my helm install of ArgoCD using these `values.yaml`:
+You do need a user to create the token against, I created a user during my helm install of ArgoCD using these `values.yaml`:
 
 ```yaml
 Server:
