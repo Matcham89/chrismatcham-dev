@@ -204,7 +204,9 @@ The base URL uses the Kubernetes internal DNS pattern:
 
 `<service>.<namespace>.svc.cluster.local`
 
-For the API token, you can generate one under **Settings > Accounts** after setting up a user during your ArgoCD Helm install:
+For the API token, you can generate one under **Settings > Accounts** 
+
+I created a user during my helm install of ArgoCD using these `values.yaml`:
 
 ```yaml
 Server:
