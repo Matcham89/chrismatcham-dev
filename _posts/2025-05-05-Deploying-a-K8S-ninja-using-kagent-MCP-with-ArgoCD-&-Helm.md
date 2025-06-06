@@ -248,3 +248,15 @@ Whether you're looking for insights, cluster debugging, or just want to feel lik
 * [Rancher Desktop](https://rancherdesktop.io/)
 
 * [ArgoCD Getting Started](https://argo-cd.readthedocs.io/en/stable/getting_started/)
+
+## Youtube
+
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/JEtg2V4dBN4?autoplay=1&sub_confirmation=1&si=33FgMZf1DAHbXk4v=PLpOQws_cuVWt9N6Lx9Ig2Yhy3OxzVqcrU" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+  referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+
