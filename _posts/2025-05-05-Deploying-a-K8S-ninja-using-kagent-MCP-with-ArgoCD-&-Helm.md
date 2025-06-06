@@ -251,6 +251,8 @@ Whether you're looking for insights, cluster debugging, or just want to feel lik
 
 ## Youtube
 
+[Link]( https://www.youtube.com/embed?listType=playlist&list=PLpOQws_cuVWt9N6Lx9Ig2Yhy3OxzVqcrU&autoplay=1&sub_confirmation=1)
+
 <iframe width="560" height="315" 
   src="https://www.youtube.com/embed?listType=playlist&list=PLpOQws_cuVWt9N6Lx9Ig2Yhy3OxzVqcrU&autoplay=1&sub_confirmation=1" 
   title="YouTube video player" 
