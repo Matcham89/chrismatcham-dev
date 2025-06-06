@@ -248,7 +248,7 @@ Stay calm, manage your time, and trust your preparation.
 
 ## Youtube
 
-[Link](https://www.youtube.com/embed/T8hD-gS_cFw?listType=playlist&list=PLpOQws_cuVWt9N6Lx9Ig2Yhy3OxzVqcrU&index=2&autoplay=1&sub_confirmation=1&si=kMfPYeVizoyBI89v)
+[Watch The Full Video Here!](https://www.youtube.com/watch?v=T8hD-gS_cFw&list=PLpOQws_cuVWt9N6Lx9Ig2Yhy3OxzVqcrU&index=2&sub_confirmation=1)
 
 <iframe width="560" height="315" 
   src="https://www.youtube.com/embed/T8hD-gS_cFw?listType=playlist&list=PLpOQws_cuVWt9N6Lx9Ig2Yhy3OxzVqcrU&index=2&autoplay=1&sub_confirmation=1&si=kMfPYeVizoyBI89v" 
